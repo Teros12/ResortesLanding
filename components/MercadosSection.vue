@@ -16,11 +16,12 @@
 
       <!-- Cards grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div
+        <NuxtLink
           v-for="(card, index) in cards"
           :key="card.title"
-          :ref="el => cardRefs[index] = el as HTMLElement"
-          class="card-market animate-on-scroll bg-brand-gray border border-white/8 overflow-hidden flex flex-col"
+          :to="card.link"
+          :ref="el => cardRefs[index] = el as any"
+          class="card-market animate-on-scroll bg-brand-gray border border-white/8 overflow-hidden flex flex-col cursor-pointer"
           :style="`transition-delay: ${index * 100}ms`"
         >
           <!-- Card visual: CSS gradient + SVG icon -->
@@ -65,7 +66,7 @@
               </svg>
             </NuxtLink>
           </div>
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </section>
