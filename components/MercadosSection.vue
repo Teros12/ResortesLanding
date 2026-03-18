@@ -21,7 +21,7 @@
           :key="card.title"
           :to="card.link"
           :ref="el => cardRefs[index] = el as any"
-          class="card-market animate-on-scroll bg-brand-gray border border-white/8 overflow-hidden flex flex-col cursor-pointer"
+          class="card-market animate-on-scroll bg-brand-gray border border-white/8 overflow-hidden flex flex-col cursor-pointer group"
           :style="`transition-delay: ${index * 100}ms`"
         >
           <!-- Card visual: CSS gradient + SVG icon -->
@@ -51,10 +51,7 @@
             <p class="text-white/50 text-sm leading-relaxed mb-5 flex-1">{{ card.description }}</p>
 
             <!-- CTA -->
-            <NuxtLink
-              :to="card.link"
-              class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red hover:text-white transition-colors duration-200 group mt-auto"
-            >
+            <span class="inline-flex items-center gap-2 text-sm font-semibold text-brand-red group-hover:text-white transition-colors duration-200 mt-auto">
               {{ card.cta }}
               <svg
                 class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
@@ -64,7 +61,7 @@
               >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
-            </NuxtLink>
+            </span>
           </div>
         </NuxtLink>
       </div>
