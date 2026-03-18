@@ -1,0 +1,26 @@
+# Nuxt build outputs
+.output
+.nuxt
+.cache
+
+# Node modules
+node_modules/
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# TypeScript
+*.tsbuildinfo
