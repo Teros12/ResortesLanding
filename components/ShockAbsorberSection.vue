@@ -210,7 +210,10 @@ function onScroll() {
     if (!sectionRef.value) return
     const rect = sectionRef.value.getBoundingClientRect()
     const totalScrollable = sectionRef.value.offsetHeight - window.innerHeight
-    const scrolled = -rect.top
+    // Negative offset to delay the animation slightly, creating a "dead zone" 
+    // where the user can see the assembled part before it starts opening.
+    const startOffset = -(window.innerHeight * 0.07)
+    const scrolled = -rect.top + startOffset
     scrollProgress.value = Math.max(0, Math.min(1, scrolled / totalScrollable))
   })
 }
@@ -227,7 +230,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section ref="sectionRef" style="position: relative; height: 320vh">
+  <section ref="sectionRef" style="position: relative; height: 240vh">
     <div class="sticky top-0 overflow-hidden" style="height: 100vh">
 
       <!-- Animated background -->

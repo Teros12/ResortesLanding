@@ -9,9 +9,9 @@
         <img
           src="https://resortesnv.com.ar/wp-content/uploads/NV-logo.svg"
           alt="Resortes NV"
-          width="80"
-          height="40"
-          class="h-10 w-auto transition-opacity duration-300 group-hover:opacity-80"
+          width="120"
+          height="56"
+          class="h-14 w-auto transition-opacity duration-300 group-hover:opacity-80"
         />
       </NuxtLink>
 
@@ -19,7 +19,7 @@
       <ul class="hidden md:flex items-center gap-8">
         <li>
           <button
-            class="nav-link text-sm font-medium tracking-wide text-white/70 hover:text-white transition-colors duration-200"
+            class="nav-link text-lg font-medium tracking-wide text-white/70 hover:text-white transition-colors duration-200"
             @click="scrollToSection('mercados')"
           >
             Mercados
@@ -27,7 +27,7 @@
         </li>
         <li>
           <button
-            class="nav-link text-sm font-medium tracking-wide text-white/70 hover:text-white transition-colors duration-200"
+            class="nav-link text-lg font-medium tracking-wide text-white/70 hover:text-white transition-colors duration-200"
             @click="scrollToSection('empresa')"
           >
             Empresa
@@ -36,7 +36,7 @@
         <li>
           <NuxtLink
             to="/faq"
-            class="nav-link text-sm font-medium tracking-wide text-white/70 hover:text-white transition-colors duration-200"
+            class="nav-link text-lg font-medium tracking-wide text-white/70 hover:text-white transition-colors duration-200"
             :class="{ 'text-brand-red': route.path === '/faq' }"
           >
             FAQ
@@ -45,7 +45,7 @@
         <li>
           <NuxtLink
             to="/contacto"
-            class="btn-primary text-sm px-5 py-2.5"
+            class="btn-primary text-lg px-5 py-2.5"
           >
             Contacto
           </NuxtLink>
@@ -82,7 +82,7 @@
         <ul class="flex flex-col py-4 px-6 gap-4">
           <li>
             <button
-              class="text-base font-medium text-white/70 hover:text-white transition-colors duration-200 w-full text-left py-2"
+              class="text-xl font-medium text-white/70 hover:text-white transition-colors duration-200 w-full text-left py-2"
               @click="scrollToSection('mercados')"
             >
               Mercados
@@ -90,7 +90,7 @@
           </li>
           <li>
             <button
-              class="text-base font-medium text-white/70 hover:text-white transition-colors duration-200 w-full text-left py-2"
+              class="text-xl font-medium text-white/70 hover:text-white transition-colors duration-200 w-full text-left py-2"
               @click="scrollToSection('empresa')"
             >
               Empresa
@@ -99,7 +99,7 @@
           <li>
             <NuxtLink
               to="/faq"
-              class="block text-base font-medium text-white/70 hover:text-white transition-colors duration-200 py-2"
+              class="block text-xl font-medium text-white/70 hover:text-white transition-colors duration-200 py-2"
               :class="{ 'text-brand-red': route.path === '/faq' }"
               @click="menuOpen = false"
             >
@@ -109,7 +109,7 @@
           <li>
             <NuxtLink
               to="/contacto"
-              class="block text-base font-semibold text-brand-red py-2"
+              class="block text-xl font-semibold text-brand-red py-2"
               @click="menuOpen = false"
             >
               Contacto
