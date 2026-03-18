@@ -125,7 +125,14 @@ onMounted(() => {
   )
 
   if (headerRef.value) observer.observe(headerRef.value)
-  cardRefs.value.forEach(el => el && observer.observe(el))
+  cardRefs.value.forEach(el => {
+    if (!el) return
+    // If it's a Vue component (like NuxtLink), use .$el. Otherwise use the element directly.
+    const domNode = (el as any).$el || el
+    if (domNode instanceof Element) {
+      observer.observe(domNode)
+    }
+  })
 
   onUnmounted(() => observer.disconnect())
 })
